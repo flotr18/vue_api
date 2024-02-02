@@ -1,16 +1,33 @@
 <template>
-  <div></div>
+  <div>
+    
+  </div>
 </template>
 
 <script>
 
+import axios from 'axios'
+
   export default {
     name: 'f1_view',
     data() {
-      return {}
+      return {
+        api_data : []
+      }
     },
     computed: {},
-    mounted() {},
+    
+    mounted() {
+      axios.get('https://opensky-network.org/api/states/all')
+        .then(response => {
+
+          for (let i = 0; i<= response.data.states.length;i++)
+          console.log(response.data.states[i][3])
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récup',error)
+        })
+    },
     methods: {}
   }
 </script>
