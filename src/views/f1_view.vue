@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MyComponent url="http://ergast.com/api/f1/seasons"></MyComponent>
+    <MyComponent :url="link"></MyComponent>
   </div>
 </template>
 
@@ -12,7 +12,8 @@ import MyComponent from '../components/MyComponent.vue'
     name: 'f1_view',
     data() {
       return {
-        api_data : []
+        api_data : [],
+        link : 'http://ergast.com/api/f1/seasons'
       }
     },
     computed: {},
