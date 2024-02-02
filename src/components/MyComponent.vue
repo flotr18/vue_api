@@ -13,11 +13,15 @@ import axios from 'axios'
     data() {
       return {}
     },
+    props : {
+      url : String
+    },
+
     computed: {},
     mounted() {
-      axios.get('https://opensky-network.org/api/states/all')
+      axios.get(this.url)
         .then(response => {
-          this.ApiData = response.data.states
+          this.ApiData = response.data
           console.log(this.ApiData)
         })
         .catch(error => {

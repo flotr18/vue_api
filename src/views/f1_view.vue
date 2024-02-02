@@ -1,6 +1,6 @@
 <template>
   <div>
-    <MyComponent></MyComponent>
+    <MyComponent url="http://ergast.com/api/f1/seasons"></MyComponent>
   </div>
 </template>
 
