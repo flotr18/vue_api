@@ -1,6 +1,7 @@
 <template>
   <div>
-    <MyComponent :url="link"></MyComponent>
+    <MyComponent :url="tada"></MyComponent>
+    {{ this.tada }}
   </div>
 </template>
 
@@ -13,7 +14,7 @@ import MyComponent from '../components/MyComponent.vue'
     data() {
       return {
         api_data : [],
-        link : 'http://ergast.com/api/f1/seasons'
+        tada : import.meta.env.VITE_SOME_KEY
       }
     },
     computed: {},
