@@ -3,6 +3,7 @@
 </template>
 
 <script>
+
   export default {
     name: 'f1_view',
     data() {
