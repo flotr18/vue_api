@@ -1,12 +1,13 @@
 <template>
   <div>
-    
+    <MyComponent></MyComponent>
   </div>
 </template>
 
 <script>
 
 import axios from 'axios'
+import MyComponent from '../components/MyComponent.vue'
 
   export default {
     name: 'f1_view',
@@ -17,18 +18,11 @@ import axios from 'axios'
     },
     computed: {},
     
-    mounted() {
-      axios.get('https://opensky-network.org/api/states/all')
-        .then(response => {
-
-          for (let i = 0; i<= response.data.states.length;i++)
-          console.log(response.data.states[i][3])
-        })
-        .catch(error => {
-          console.error('Erreur lors de la récup',error)
-        })
-    },
-    methods: {}
+    
+    methods: {},
+    components : {
+      MyComponent
+    }
   }
 </script>
 
