@@ -6,7 +6,6 @@
 
 <script>
 
-import axios from 'axios'
 import MyComponent from '../components/MyComponent.vue'
 
   export default {

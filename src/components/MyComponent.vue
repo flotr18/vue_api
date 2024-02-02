@@ -1,6 +1,6 @@
 <template>
   <div>
-    Bonjour je m'appelle MyComponent
+    {{ this.ApiData }}
   </div>
 </template>
 
@@ -17,9 +17,8 @@ import axios from 'axios'
     mounted() {
       axios.get('https://opensky-network.org/api/states/all')
         .then(response => {
-
-          for (let i = 0; i<= response.data.states.length;i++)
-          console.log(response.data.states[i][3])
+          this.ApiData = response.data.states
+          console.log(this.ApiData)
         })
         .catch(error => {
           console.error('Erreur lors de la récup',error)
